@@ -1,14 +1,14 @@
 ﻿<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <title>表白网页</title>
+    <title>To li runyue</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <style type="text/css">
         @font-face {
             font-family: digit;
             src: url('digital-7_mono.ttf') format("truetype");
         } 
-<audio src="/music1.mp3" autoplay="autoplay">
+
     </style>
     <link href="style/default.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="style/jquery.js"></script>
@@ -17,11 +17,17 @@
 </head>
 
 <body>
-    <div id="mainDiv">
+		<audio autoplay="autoplay" height="100" width="100"  id="music">
+				<source src="../renxi.mp3" type="audio/mp3" />
+				<embed height="100" width="100" src="../renxi.mp3" />
+		</audio>
+		
+		
+    <div id="mainDiv" onClick="play()" alt="user" >
         <div id="content">
             <div id="code">
                 <p><span class="comments">/**</span><br />
-				<span class="space"/><span class="comments">* to 李闰月：</span><br />
+				<span class="space"/><span class="comments">* to 李润月：</span><br />
                   <span class="space"/><span class="comments">* 臭丫头 我爱你,</span><br />
                   <span class="space"/><span class="comments">* 今天呢是，5.20情人节，特意写这个网页送给你.</span><br />
                   <span class="space"/><span class="comments">*/</span><br /><br /><br />
@@ -53,8 +59,8 @@
 润月 I love you
 </center>
                         情人节快乐
-                        <div id="elapseClock" style="display:none"></div>
-                        <a href='index2.html' id="accept">小丫头点击这里</a>
+                        <div id="elapseClock" >
+                        <a href='index2.html' id="accept" >小丫头点击这里</a></div>
                     </div>
                     <div id="loveu">
                         爱你，直到永永远远。<br/>
@@ -78,6 +84,24 @@
 
 
     <script type="text/javascript">
+		window.onload = function(){ 
+		 var audio = document.getElementById('music');
+			 audio.pause();//打开页面时无音乐
+		}
+		function play() {
+		
+			var audio = document.getElementById('music');
+			if (audio.paused) {
+				audio.play();
+				//document.getElementById('musicImg').src="images/play.png";
+			}else{
+				audio.pause();
+				audio.currentTime = 0;//音乐从头播放
+				//document.getElementById('musicImg').src="images/stop.png";
+			}
+		}
+		
+		
         var offsetX = $("#loveHeart").width() / 2;
         var offsetY = $("#loveHeart").height() / 2 - 55;
         
@@ -110,5 +134,5 @@
         }
     </script>
 </body>
-    <audio id="bgmMusic" src="http://qzone.haoduoge.com/music/C2C3F0LSXH4D771253124A26CF9C71C939B2A.mp3" preload="auto" type="audio/mp3" autoplay loop></audio>
+ 
 </html>
